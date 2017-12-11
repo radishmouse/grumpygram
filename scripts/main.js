@@ -46,10 +46,10 @@ function openOverlayWithImage(imgUrl) {
   overlayElement.classList.remove('hidden');
 }
 
-function addThumbnailClickListeners() {
+function addClickListeners(container, filter) {
 
 
-  $(THUMBNAIL_CONTAINER_SEL).on('click', 'a', function (event) {
+  $(container).on('click', filter, function (event) {
     event.preventDefault();
     console.log('at the thumbnail container (delegated)');
     // console.log(event.target);
@@ -68,7 +68,7 @@ function addCloserListener() {
 
 function main() {
   drawThumbnails(images);
-  addThumbnailClickListeners();
+  addClickListeners(THUMBNAIL_CONTAINER_SEL, 'a');
   addCloserListener();
 }
 
