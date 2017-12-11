@@ -46,7 +46,7 @@ function openOverlayWithImage(imgUrl) {
   overlayElement.classList.remove('hidden');
 }
 
-function addClickListeners(container, filter) {
+function addListeners(container, filter) {
 
 
   $(container).on('click', filter, function (event) {
@@ -68,7 +68,7 @@ function addCloserListener() {
 
 function main() {
   drawThumbnails(images);
-  addClickListeners(THUMBNAIL_CONTAINER_SEL, 'a');
+  addListeners(THUMBNAIL_CONTAINER_SEL, 'a');
   addCloserListener();
 }
 
