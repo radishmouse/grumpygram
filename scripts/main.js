@@ -46,13 +46,10 @@ function openOverlayWithImage(imgUrl) {
   overlayElement.classList.remove('hidden');
 }
 
-function addThumbnailClickListeners() {
+function addListeners(container, filter) {
 
-  // $(document.body).on('click', function (event) {
-  //   console.log('at the body');
-  // });
 
-  $(THUMBNAIL_CONTAINER_SEL).on('click', 'a', function (event) {
+  $(container).on('click', filter, function (event) {
     event.preventDefault();
     console.log('at the thumbnail container (delegated)');
     // console.log(event.target);
@@ -60,34 +57,6 @@ function addThumbnailClickListeners() {
     var url = $(event.currentTarget).attr('href');
     openOverlayWithImage(url);
   });
-
-  // $(THUMBNAIL_CONTAINER_SEL).on('click', function (event) {
-  //   event.preventDefault();
-  //   console.log('at the thumbnail container');
-  //   // console.log(event.target);
-  //   // openOverlayWithImage(url);
-  // });
-
-  // $('img').on('click', function (event) {
-  //   console.log('at the img');
-  // });
-
-  // $('a').on('click', function (event) {
-  //   console.log('at the a');
-  // });
-
-
-  // var thumbnailItems = document.querySelectorAll(ALL_THUMBNAILS_SEL);
-  // thumbnailItems.forEach(function (thumb) {
-  //   var url = thumb.getAttribute('href');
-  //   thumb.addEventListener('click', function (event) {
-  //     event.preventDefault();
-  //     openOverlayWithImage(url);
-  //   })
-  //   console.log('done with addEventListener');
-  // })
-  // console.log('done with forEach');
-  // console.log('done with addThumbnailClickListeners');
 }
 
 function addCloserListener() {
@@ -99,12 +68,7 @@ function addCloserListener() {
 
 function main() {
   drawThumbnails(images);
-  addThumbnailClickListeners();
-  // $(THUMBNAIL_CONTAINER_SEL).on('click', 'a', function (event) {
-  //   event.preventDefault();
-  //   console.log('got a click');
-  //   // openOverlayWithImage(url);
-  // });
+  addListeners(THUMBNAIL_CONTAINER_SEL, 'a');
   addCloserListener();
 }
 
