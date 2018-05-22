@@ -3,7 +3,7 @@ var CLOSER_SEL = '[data-overlay-closer]';
 var MAIN_IMG_SEL = '[data-overlay-image]';
 var THUMBNAIL_CONTAINER_SEL = '[data-thumbnail-container]';
 var ALL_THUMBNAILS_SEL = '[data-trigger]';
-
+alert('HAAHAHAHAHAHAHAHAAHAHAHA');
 var images = [
   "http://i0.kym-cdn.com/photos/images/facebook/001/037/295/4fe.jpg",
   "http://www.calgaryherald.com/cms/binary/10035261.jpg?size=640x420",
